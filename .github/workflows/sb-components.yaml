@@ -3,6 +3,7 @@ name: "SB Components"
 on:
   schedule:
     - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   check:
