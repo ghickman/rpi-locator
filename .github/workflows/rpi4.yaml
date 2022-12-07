@@ -6,6 +6,15 @@ on:
   workflow_dispatch:
 
 jobs:
+  cool-components:
+    name: "Cool Components"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for 'Sold Out'
+        run: |
+          curl "https://coolcomponents.co.uk/collections/raspberry-pi-boards/products/raspberry-pi-4?variant=32889923633213" | grep "Out of stock"
+
   pimoroni:
     name: "Pimoroni"
     runs-on: ubuntu-latest
