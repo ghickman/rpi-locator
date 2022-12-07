@@ -25,6 +25,15 @@ jobs:
         run: |
           curl "https://shop.pimoroni.com/products/raspberry-pi-4?variant=31856486416467" | grep "Out of stock"
 
+  rapid:
+    name: "Rapid"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for 'Sold Out'
+        run: |
+          curl "https://www.rapidonline.com/raspberry-pi-4-model-b-8gb-75-1013" | grep "schema.org/OutOfStock"
+
   sb-components:
     name: "SB Components"
     runs-on: ubuntu-latest
@@ -42,12 +51,3 @@ jobs:
       - name: Check for 'Sold Out'
         run: |
           curl "https://thepihut.com/products/raspberry-pi-4-model-b?variant=31994565689406" | grep "Sold out"
-
-  rapid:
-    name: "Rapid"
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check for 'Sold Out'
-        run: |
-          curl "https://www.rapidonline.com/raspberry-pi-4-model-b-8gb-75-1013" | grep "schema.org/OutOfStock"
