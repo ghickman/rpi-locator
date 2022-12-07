@@ -1,0 +1,53 @@
+name: "Search for rpi0s"
+
+on:
+  push:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  cool-components:
+    name: "Cool Components"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for 'Sold Out'
+        run: |
+          curl "https://coolcomponents.co.uk/collections/raspberry-pi-boards/products/raspberry-pi-zero-2-w" | grep "Sold out"
+
+  pimoroni:
+    name: "Pimoroni"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for 'Sold Out'
+        run: |
+          curl "https://shop.pimoroni.com/products/raspberry-pi-zero-2-w?variant=39493046075475" | grep "Out of stock"
+
+  rapid:
+    name: "Rapid"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for 'Sold Out'
+        run: |
+          curl "https://www.rapidonline.com/raspberry-pi-zero-2-w-75-2230" | grep "schema.org/OutOfStock"
+
+  sb-components:
+    name: "SB Components"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for 'Sold Out'
+        run: |
+          curl "https://shop.sb-components.co.uk/products/raspberry-pi-zero-2-w-with-soldered-header" | grep "Sold Out"
+
+  the-pihut:
+    name: "The PiHut"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for 'Sold Out'
+        run: |
+          curl "https://thepihut.com/products/raspberry-pi-zero-2?variant=41181426942147" | grep "Sold out"
