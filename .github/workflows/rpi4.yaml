@@ -50,4 +50,4 @@ jobs:
     steps:
       - name: Check for 'Sold Out'
         run: |
-          curl "https://www.rapidonline.com/raspberry-pi-4-model-b-8gb-75-1013" | grep "Sold Out"
+          curl "https://www.rapidonline.com/raspberry-pi-4-model-b-8gb-75-1013" | grep "schema.org/OutOfStock"
